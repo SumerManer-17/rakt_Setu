@@ -41,25 +41,25 @@ def create_app():
     def login():
         return send_from_directory(os.path.join(app.root_path, "static", "pages"), "login.html")
 
-@app.route("/register")
-def register():
-    return send_from_directory("static/pages", "register.html")
+    @app.route("/register")
+    def register():
+        return send_from_directory(os.path.join(app.root_path, "static", "pages"), "register.html")
 
-@app.route("/admin")
-def admin():
-    return send_from_directory("static/pages", "admin.html")
+    @app.route("/admin")
+    def admin():
+        return send_from_directory(os.path.join(app.root_path, "static", "pages"), "admin.html")
 
-@app.route("/map")
-def map_page():
-    return send_from_directory("static/pages", "map.html")
+    @app.route("/map")
+    def map_page():
+        return send_from_directory(os.path.join(app.root_path, "static", "pages"), "map.html")
 
-@app.route("/emergency")
-def emergency():
-    return send_from_directory("static/pages", "emergency.html")
+    @app.route("/emergency")
+    def emergency():
+        return send_from_directory(os.path.join(app.root_path, "static", "pages"), "emergency.html")
 
-@app.route("/status")
-def status():
-    return send_from_directory("static/pages", "status.html")
+    @app.route("/status")
+    def status():
+        return send_from_directory(os.path.join(app.root_path, "static", "pages"), "status.html")
 
     # 404 handler
     @app.errorhandler(404)
