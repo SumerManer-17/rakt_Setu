@@ -6,7 +6,7 @@ from backend.routes.donor_routes import donor_bp
 from backend.routes.request_routes import request_bp
 from backend.routes.webhook_routes import webhook_bp
 from backend.routes.admin_routes import admin_bp
-from services.scheduler import start_scheduler
+from backend.services.scheduler import start_scheduler
 
 def create_app():
     app = Flask(__name__)
