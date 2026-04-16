@@ -15,6 +15,7 @@ def create_app():
     # Enable CORS so frontend can talk to backend
     CORS(app,origins="*")
 
+    print("DB URL:", app.config.get("SQLALCHEMY_DATABASE_URI"))
     # Initialize database
     init_db(app)
 
