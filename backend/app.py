@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify,send_from_directory
 from flask_cors import CORS
 from backend.config import Config
 from backend.database.db import init_db
@@ -9,7 +9,7 @@ from backend.routes.admin_routes import admin_bp
 from backend.services.scheduler import start_scheduler
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder="static", static_url_path="/static")
     app.config.from_object(Config)
 
     # Enable CORS so frontend can talk to backend
@@ -31,7 +31,7 @@ def create_app():
     # Health check route
     @app.route("/")
     def home():
-        return send_from_directory("static", "index.html")
+        return send_from_directory(os.path.join(app.root_path, "static"), "index.html")
 
     # 404 handler
     @app.errorhandler(404)
