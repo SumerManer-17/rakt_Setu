@@ -1,6 +1,6 @@
 from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime, timedelta
-from config import Config
+from backend.config import Config
 
 
 scheduler = BackgroundScheduler()

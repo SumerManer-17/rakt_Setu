@@ -1,5 +1,5 @@
 import requests
-from config import Config
+from backend.config import Config
 
 
 def _send_message(payload):

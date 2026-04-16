@@ -1,10 +1,10 @@
 from flask import Blueprint, request, jsonify
-from database.db import db
-from models.donor import Donor
-from models.donation import DonationHistory
-from services.whatsapp import send_registration_confirmation
-from services.eligibility import days_until_eligible, next_eligible_date, is_eligible_to_donate
-from utils.validators import validate_donor_data
+from backend.database.db import db
+from backend.models.donor import Donor
+from backend.models.donation import DonationHistory
+from backend.services.whatsapp import send_registration_confirmation
+from backend.services.eligibility import days_until_eligible, next_eligible_date, is_eligible_to_donate
+from backend.utils.validators import validate_donor_data
 from utils.helpers import success_response, error_response, calculate_freshness_label
 from datetime import datetime
 

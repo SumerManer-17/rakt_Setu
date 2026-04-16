@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
-from config import Config
-from services.matching import fulfill_request, mark_donor_skipped, mark_donor_active, mark_donor_inactive
-from utils.helpers import format_phone
+from backend.config import Config
+from backend.services.matching import fulfill_request, mark_donor_skipped, mark_donor_active, mark_donor_inactive
+from backend.utils.helpers import format_phone
 
 webhook_bp = Blueprint("webhook", __name__, url_prefix="/webhook")
 

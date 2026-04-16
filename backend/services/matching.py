@@ -1,12 +1,12 @@
 import math
 from datetime import datetime
-from database.db import db
-from models.donor import Donor
-from models.request import EmergencyRequest
-from models.alert import DonorAlert
-from models.donation import DonationHistory
-from services.eligibility import is_eligible_to_donate
-from config import Config
+from backend.database.db import db
+from backend.models.donor import Donor
+from backend.models.request import EmergencyRequest
+from backend.models.alert import DonorAlert
+from backend.models.donation import DonationHistory
+from backend.services.eligibility import is_eligible_to_donate
+from backend.config import Config
 
 
 # ─────────────────────────────────────────

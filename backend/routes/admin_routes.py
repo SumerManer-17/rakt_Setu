@@ -1,9 +1,9 @@
 from flask import jsonify, Blueprint
-from models.donor import Donor
-from models.request import EmergencyRequest
-from models.alert import DonorAlert
-from models.donation import DonationHistory
-from utils.helpers import success_response
+from backend.models.donor import Donor
+from backend.models.request import EmergencyRequest
+from backend.models.alert import DonorAlert
+from backend.models.donation import DonationHistory
+from backend.utils.helpers import success_response
 
 admin_bp = Blueprint("admin", __name__, url_prefix="/api/admin")
 

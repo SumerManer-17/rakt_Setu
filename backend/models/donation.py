@@ -1,4 +1,4 @@
-from database.db import db
+from backend.database.db import db
 from datetime import datetime
 
 class DonationHistory(db.Model):

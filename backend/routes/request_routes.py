@@ -1,10 +1,10 @@
 from flask import Blueprint, request, jsonify
-from database.db import db
-from models.request import EmergencyRequest
-from models.alert import DonorAlert
-from services.matching import send_initial_alerts
-from utils.validators import validate_request_data
-from utils.helpers import success_response, error_response
+from backend.database.db import db
+from backend.models.request import EmergencyRequest
+from backend.models.alert import DonorAlert
+from backend.services.matching import send_initial_alerts
+from backend.utils.validators import validate_request_data
+from backend.utils.helpers import success_response, error_response
 
 request_bp = Blueprint("requests", __name__, url_prefix="/api/requests")
 

@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from config import Config
+from backend.config import Config
 
 def is_eligible_to_donate(donor):
     """
