@@ -5,7 +5,7 @@ from backend.models.donation import DonationHistory
 from backend.services.whatsapp import send_registration_confirmation
 from backend.services.eligibility import days_until_eligible, next_eligible_date, is_eligible_to_donate
 from backend.utils.validators import validate_donor_data
-from utils.helpers import success_response, error_response, calculate_freshness_label
+from backend.utils.helpers import success_response, error_response, calculate_freshness_label
 from datetime import datetime
 
 donor_bp = Blueprint("donor", __name__, url_prefix="/api/donors")
