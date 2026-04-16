@@ -1,3 +1,4 @@
+import os
 from flask import Flask, jsonify,send_from_directory
 from flask_cors import CORS
 from backend.config import Config
@@ -31,35 +32,35 @@ def create_app():
     # Health check route
     @app.route("/")
     def home():
-        return send_from_directory(os.path.join(app.root_path, "static"), "index.html")
+        return app.send_static_file("index.html")
     
     @app.route("/dashboard")
     def dashboard():
-        return send_from_directory(os.path.join(app.root_path, "static", "pages"), "dashboard.html")
+        return app.send_static_file("pages/dashboard.html")
 
     @app.route("/login")
     def login():
-        return send_from_directory(os.path.join(app.root_path, "static", "pages"), "login.html")
+        return app.send_static_file("pages/login.html")
 
     @app.route("/register")
     def register():
-        return send_from_directory(os.path.join(app.root_path, "static", "pages"), "register.html")
+        return app.send_static_file("pages/register.html")
 
     @app.route("/admin")
     def admin():
-        return send_from_directory(os.path.join(app.root_path, "static", "pages"), "admin.html")
+        return app.send_static_file("pages/admin.html")
 
     @app.route("/map")
     def map_page():
-        return send_from_directory(os.path.join(app.root_path, "static", "pages"), "map.html")
+        return app.send_static_file("pages/map.html")
 
     @app.route("/emergency")
     def emergency():
-        return send_from_directory(os.path.join(app.root_path, "static", "pages"), "emergency.html")
+        return app.send_static_file("pages/emergency.html")
 
     @app.route("/status")
     def status():
-        return send_from_directory(os.path.join(app.root_path, "static", "pages"), "status.html")
+        return app.send_static_file("pages/status.html")
 
     # 404 handler
     @app.errorhandler(404)
