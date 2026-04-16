@@ -3,7 +3,7 @@
 // All frontend → backend calls go here
 // ─────────────────────────────────────────
 
-const API_BASE = "http://localhost:5000";
+const API_BASE = "";
 
 async function apiCall(endpoint, method = "GET", body = null) {
   const options = {
