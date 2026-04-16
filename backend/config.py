@@ -5,12 +5,21 @@ load_dotenv()
 
 class Config:
     # Database
-    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
+    # SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
+    # SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    uri = os.getenv("DATABASE_URL")
+
+    if uri and uri.startswith("postgres://"):
+        uri = uri.replace("postgres://", "postgresql://", 1)
+
+    SQLALCHEMY_DATABASE_URI = uri
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    DEBUG = True
 
     # Flask
     SECRET_KEY = os.getenv("SECRET_KEY", "fallback_secret_key")
-    DEBUG = os.getenv("FLASK_DEBUG", "False") == "True"
+    # DEBUG = os.getenv("FLASK_DEBUG", "False") == "True"
 
     # WhatsApp
     WHATSAPP_TOKEN = os.getenv("WHATSAPP_TOKEN")

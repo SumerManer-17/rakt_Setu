@@ -25,7 +25,7 @@ def create_app():
     app.register_blueprint(admin_bp)
 
     # Start background scheduler
-    start_scheduler(app)
+    # start_scheduler(app)
 
     # Health check route
     @app.route("/")
