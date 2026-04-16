@@ -34,31 +34,31 @@ def create_app():
     def home():
         return app.send_static_file("index.html")
     
-    @app.route("/dashboard")
+    @app.route("/dashboard.html")
     def dashboard():
         return app.send_static_file("pages/dashboard.html")
 
-    @app.route("/login")
+    @app.route("/login.html")
     def login():
         return app.send_static_file("pages/login.html")
 
-    @app.route("/register")
+    @app.route("/register.html")
     def register():
         return app.send_static_file("pages/register.html")
 
-    @app.route("/admin")
+    @app.route("/admin.html")
     def admin():
         return app.send_static_file("pages/admin.html")
 
-    @app.route("/map")
+    @app.route("/map.html")
     def map_page():
         return app.send_static_file("pages/map.html")
 
-    @app.route("/emergency")
+    @app.route("/emergency.html")
     def emergency():
         return app.send_static_file("pages/emergency.html")
 
-    @app.route("/status")
+    @app.route("/status.html")
     def status():
         return app.send_static_file("pages/status.html")
 
