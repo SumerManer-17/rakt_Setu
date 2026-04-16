@@ -30,11 +30,8 @@ def create_app():
 
     # Health check route
     @app.route("/")
-    def health():
-        return jsonify({
-            "status": "RaktSetu API is running 🩸",
-            "version": "1.0.0"
-        })
+    def home():
+        return send_from_directory("static", "index.html")
 
     # 404 handler
     @app.errorhandler(404)
