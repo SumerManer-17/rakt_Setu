@@ -1,11 +1,11 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
-from config import Config
-from database.db import init_db
-from routes.donor_routes import donor_bp
-from routes.request_routes import request_bp
-from routes.webhook_routes import webhook_bp
-from routes.admin_routes import admin_bp
+from backend.config import Config
+from backend.database.db import init_db
+from backend.routes.donor_routes import donor_bp
+from backend.routes.request_routes import request_bp
+from backend.routes.webhook_routes import webhook_bp
+from backend.routes.admin_routes import admin_bp
 from services.scheduler import start_scheduler
 
 def create_app():
